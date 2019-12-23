@@ -186,9 +186,9 @@
 				664A466023AB730F00E35DD1 /* AppDelegate.swift */,
 				664A466223AB730F00E35DD1 /* SceneDelegate.swift */,
 				664A468523AB761900E35DD1 /* WelcomeViewController.swift */,
-				6620C54D23AC035200FEB96E /* NewsViewController.swift */,
 				66F2097923B0394C0017ABE3 /* LoginViewController.swift */,
 				66F2097B23B0399D0017ABE3 /* RegisterViewController.swift */,
+				6620C54D23AC035200FEB96E /* NewsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

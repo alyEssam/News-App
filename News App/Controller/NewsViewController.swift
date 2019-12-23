@@ -10,23 +10,21 @@ import UIKit
 import Firebase
 import ReadMoreTextView
 import SVProgressHUD
+import AVFoundation
 
 class NewsViewController: UITableViewController {
-    
     var Articles = [Article]()
     //This array for handling Show more & show less feature
     var showMoreBtnIsSelected = [Bool] ()
-    
+    //For text Speaking (AVFoundation Library)
+    let synthesizer = AVSpeechSynthesizer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //Custom Cell
         tableView.register(UINib(nibName: "NewsCustomCell", bundle: nil), forCellReuseIdentifier: "customNewsCell")
         
         tableView.separatorStyle = .singleLine
-        //Seting all indexes of the boolean array to false as a default value
-        for _ in 1...10{
-            showMoreBtnIsSelected.append(false)
-        }
 
         //Get the top headlines news
         Newsapi.getTopheadlines(completion: handleResponse(Articles:error:))
@@ -36,9 +34,9 @@ class NewsViewController: UITableViewController {
             raiseAlertView(withTitle: "Failure", withMessage: error! .localizedDescription)
         } else {
             for articlee in Articles {
-                //                print("********")
-                //                print(articlee)
-                //                print("********")
+             // print("********")
+             // print(articlee)
+             // print("********")
                 let article = Article()
                 article.title = articlee.title
                 article.displayImage = articlee.urlToImage
@@ -48,6 +46,12 @@ class NewsViewController: UITableViewController {
                 article.publishedDate = articlee.publishedAt
                 article.newsURL = articlee.url
                 self.Articles.append(article)
+                
+                // Setting all indexes of the boolean array to false as a default value
+                // I'll use it in Show more feature
+                for _ in 0 ..< Articles.count {
+                        showMoreBtnIsSelected.append(false)
+                    }
                 
                 DispatchQueue.main.async {
                     //self.configureTableView()
@@ -69,11 +73,6 @@ class NewsViewController: UITableViewController {
         let items = [URL(string: url!)!]
         let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
         present(activityController, animated: true, completion: nil)
-//        activityController.completionWithItemsHandler = { activity, success, items, error in
-//            if success {
-//
-//            }
-//        }
     }
     
     //MARK: Show more & Show less feature
@@ -82,6 +81,7 @@ class NewsViewController: UITableViewController {
         //print("you have selected the Show more button")
         let hitPoint: CGPoint = sender.convert(CGPoint.zero, to: self.tableView)
         let indexPath: NSIndexPath = self.tableView.indexPathForRow(at: hitPoint)! as NSIndexPath
+        //Toggle showMoreBtnIsSelected[indexPath.row]
         showMoreBtnIsSelected[indexPath.row] = !showMoreBtnIsSelected[indexPath.row]
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -89,11 +89,26 @@ class NewsViewController: UITableViewController {
     }
     
     
-    //Declare configureTableView here:
-//    func configureTableView(){
-//        tableView.rowHeight = UITableView.automaticDimension
-//        tableView.estimatedRowHeight = 380
-//    }
+    @objc func listenToDescription(sender: UIButton){
+        let hitPoint: CGPoint = sender.convert(CGPoint.zero, to: self.tableView)
+        let indexPath: NSIndexPath = self.tableView.indexPathForRow(at: hitPoint)! as NSIndexPath
+        let article = Articles[indexPath.row]
+                
+        // text to speech
+        let textToSpeak = article.descriptionn
+        let utTerance = AVSpeechUtterance(string: textToSpeak!)
+        utTerance.voice = AVSpeechSynthesisVoice(language: "en-gb")
+
+        if  !synthesizer.isSpeaking{
+            //print("Start Speaking")
+              synthesizer.speak(utTerance)
+            }
+        else {
+            //print("Stop Speaking")
+            synthesizer.stopSpeaking(at: .immediate)
+        }
+        
+    }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
         do {
@@ -122,6 +137,10 @@ extension NewsViewController{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customNewsCell", for: indexPath) as! NewsCustomCell
         let article = Articles[indexPath.row]
+        
+        // Stop text to speech
+        synthesizer.stopSpeaking(at: .immediate)
+
         cell.title.text = article.title
         cell.publishedAt.text = article.publishedDate
         cell.author.text = "Published by:\(article.author ?? "")"
@@ -135,6 +154,7 @@ extension NewsViewController{
             DispatchQueue.main.async {
                 UIView.animate(withDuration: 0.5) {
                     cell.showMoreButton.setTitle("Show less", for: .normal)
+                    cell.listenToDescription.isHidden = false
                     let size = CGSize(width: self.view.frame.width, height: .infinity)
                     let estimatedSize = cell.descriptionText.sizeThatFits(size)
                     cell.descriptionText.constraints.forEach { (constraint) in
@@ -151,6 +171,7 @@ extension NewsViewController{
             DispatchQueue.main.async {
                 UIView.animate(withDuration: 0.5) {
                     cell.showMoreButton.setTitle("Show more", for: .normal)
+                    cell.listenToDescription.isHidden = true
                     cell.descriptionText.constraints.forEach { (constraint) in
                         if constraint.firstAttribute == .height {
                             constraint.constant = 44.0
@@ -182,6 +203,7 @@ extension NewsViewController{
         }
         cell.shareButton.addTarget(self, action: #selector(self.selectShareButton), for: .touchUpInside)
         cell.showMoreButton.addTarget(self, action: #selector(self.selectShowMoreButton), for: .touchUpInside)
+        cell.listenToDescription.addTarget(self, action: #selector(self.listenToDescription), for: .touchUpInside)
         return cell
     }
     

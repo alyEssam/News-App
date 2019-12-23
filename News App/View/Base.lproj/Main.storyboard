@@ -30,7 +30,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="B0x-6s-Q5f">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="682.00000000000023"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="682"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnY-9b-Bk2">
                                 <rect key="frame" x="0.0" y="772" width="414" height="45"/>
@@ -187,7 +187,7 @@
         <!--Register-->
         <scene sceneID="zEQ-e6-Abs">
             <objects>
-                <viewController storyboardIdentifier="registrationVC" id="lGp-T8-k94" customClass="RegisterViewController" customModule="Flash_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="registrationVC" id="lGp-T8-k94" customClass="RegisterViewController" customModule="News_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="keH-4C-rPW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -271,7 +271,7 @@
         <!--Log In-->
         <scene sceneID="nCK-CN-fzI">
             <objects>
-                <viewController storyboardIdentifier="logInVC" id="eZw-LC-c32" customClass="LogInViewController" customModule="Flash_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="logInVC" id="eZw-LC-c32" customClass="LogInViewController" customModule="News_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9SX-ik-1uI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

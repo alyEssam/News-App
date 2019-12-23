@@ -78,6 +78,13 @@
                         </constraints>
                         <state key="normal" title="Show more"/>
                     </button>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSW-jh-ae9">
+                        <rect key="frame" x="56" y="47" width="26" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="26" id="gLh-l4-PuE"/>
+                        </constraints>
+                        <state key="normal" image="speaker.2.fill" catalog="system"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="KwY-U9-dFg" firstAttribute="leading" secondItem="x4a-GW-5FY" secondAttribute="leading" id="2dT-zJ-85F"/>
@@ -90,6 +97,7 @@
                     <constraint firstItem="KwY-U9-dFg" firstAttribute="top" secondItem="4sQ-Ha-kZV" secondAttribute="bottom" constant="5" id="VfG-No-sfi"/>
                     <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="F91-R6-3yd" secondAttribute="bottom" constant="9" id="aKz-el-wV2"/>
                     <constraint firstItem="ufv-Av-aXk" firstAttribute="leading" secondItem="tbx-Ux-2Re" secondAttribute="leading" constant="8" id="abK-go-x5a"/>
+                    <constraint firstItem="lSW-jh-ae9" firstAttribute="leading" secondItem="sf6-iB-kTo" secondAttribute="trailing" constant="10" id="d5p-Kg-ybQ"/>
                     <constraint firstAttribute="trailing" secondItem="KwY-U9-dFg" secondAttribute="trailing" constant="8" id="egX-xB-WbF"/>
                     <constraint firstItem="sf6-iB-kTo" firstAttribute="leading" secondItem="tbx-Ux-2Re" secondAttribute="leading" constant="8" id="fbF-k9-rtQ"/>
                     <constraint firstItem="wRg-os-Pct" firstAttribute="leading" secondItem="tbx-Ux-2Re" secondAttribute="leading" constant="8" id="gQD-M1-SxC"/>
@@ -100,12 +108,14 @@
                     <constraint firstAttribute="trailing" secondItem="x4a-GW-5FY" secondAttribute="trailing" constant="8" id="wLa-qY-Tqi"/>
                     <constraint firstItem="ufv-Av-aXk" firstAttribute="top" secondItem="x4a-GW-5FY" secondAttribute="bottom" constant="5" id="xyG-PZ-8p6"/>
                     <constraint firstItem="4sQ-Ha-kZV" firstAttribute="leading" secondItem="tbx-Ux-2Re" secondAttribute="leading" constant="8" id="yu9-Jc-KKp"/>
+                    <constraint firstItem="lSW-jh-ae9" firstAttribute="top" secondItem="wRg-os-Pct" secondAttribute="bottom" constant="1" id="zrS-6g-UvQ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="0KC-Kh-sLA"/>
             <connections>
                 <outlet property="author" destination="sf6-iB-kTo" id="afx-Jz-T4s"/>
                 <outlet property="descriptionText" destination="KwY-U9-dFg" id="4lZ-0p-gv0"/>
+                <outlet property="listenToDescription" destination="lSW-jh-ae9" id="iYs-VF-kVh"/>
                 <outlet property="newsPicture" destination="x4a-GW-5FY" id="Hca-9o-RqK"/>
                 <outlet property="publishedAt" destination="4sQ-Ha-kZV" id="iRe-hR-IAG"/>
                 <outlet property="shareButton" destination="AAy-kq-Ssq" id="WHc-hJ-WsV"/>
@@ -117,6 +127,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="speaker.2.fill" catalog="system" width="64" height="48"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
 </document>
