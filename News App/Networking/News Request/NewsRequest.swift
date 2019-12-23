@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Future Work Only
 struct NewsRequest : Codable {
 
     var news = [String : String]()

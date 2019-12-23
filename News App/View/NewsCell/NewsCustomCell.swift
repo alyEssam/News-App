@@ -18,7 +18,6 @@ class NewsCustomCell: UITableViewCell, UINavigationControllerDelegate {
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var showMoreButton: UIButton!
-    // @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()

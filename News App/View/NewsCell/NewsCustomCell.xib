@@ -50,7 +50,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwY-U9-dFg">
-                        <rect key="frame" x="8" y="246" width="307" height="44"/>
+                        <rect key="frame" x="8" y="246" width="304" height="44"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="5Vh-CI-Vj8"/>
@@ -61,12 +61,15 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAy-kq-Ssq">
-                        <rect key="frame" x="291" y="5" width="24" height="35"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAy-kq-Ssq">
+                        <rect key="frame" x="291" y="5" width="28" height="41"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="35" id="Rks-VS-PZZ"/>
+                            <constraint firstAttribute="height" constant="41" id="HyB-Lh-ay4"/>
+                            <constraint firstAttribute="width" constant="28" id="Wkm-r6-HCD"/>
                         </constraints>
-                        <state key="normal" title="Button" image="square.and.arrow.up" catalog="system"/>
+                        <state key="normal" image="square.and.arrow.up" catalog="system">
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                        </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F91-R6-3yd">
                         <rect key="frame" x="8" y="295" width="77" height="22"/>
@@ -77,8 +80,6 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="AAy-kq-Ssq" secondAttribute="trailing" constant="5" id="1Hl-5X-S4N"/>
-                    <constraint firstAttribute="trailing" secondItem="KwY-U9-dFg" secondAttribute="trailing" constant="5" id="1iq-tX-2cG"/>
                     <constraint firstItem="KwY-U9-dFg" firstAttribute="leading" secondItem="x4a-GW-5FY" secondAttribute="leading" id="2dT-zJ-85F"/>
                     <constraint firstItem="x4a-GW-5FY" firstAttribute="top" secondItem="sf6-iB-kTo" secondAttribute="bottom" constant="5" id="5IC-fS-Mdg"/>
                     <constraint firstItem="sf6-iB-kTo" firstAttribute="top" secondItem="wRg-os-Pct" secondAttribute="bottom" constant="5" id="7VX-EL-L2n"/>
@@ -89,8 +90,10 @@
                     <constraint firstItem="KwY-U9-dFg" firstAttribute="top" secondItem="4sQ-Ha-kZV" secondAttribute="bottom" constant="5" id="VfG-No-sfi"/>
                     <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="F91-R6-3yd" secondAttribute="bottom" constant="9" id="aKz-el-wV2"/>
                     <constraint firstItem="ufv-Av-aXk" firstAttribute="leading" secondItem="tbx-Ux-2Re" secondAttribute="leading" constant="8" id="abK-go-x5a"/>
+                    <constraint firstAttribute="trailing" secondItem="KwY-U9-dFg" secondAttribute="trailing" constant="8" id="egX-xB-WbF"/>
                     <constraint firstItem="sf6-iB-kTo" firstAttribute="leading" secondItem="tbx-Ux-2Re" secondAttribute="leading" constant="8" id="fbF-k9-rtQ"/>
                     <constraint firstItem="wRg-os-Pct" firstAttribute="leading" secondItem="tbx-Ux-2Re" secondAttribute="leading" constant="8" id="gQD-M1-SxC"/>
+                    <constraint firstAttribute="trailing" secondItem="AAy-kq-Ssq" secondAttribute="trailing" constant="1" id="no4-Er-Ft4"/>
                     <constraint firstItem="AAy-kq-Ssq" firstAttribute="top" secondItem="tbx-Ux-2Re" secondAttribute="top" constant="5" id="pPL-aJ-tAD"/>
                     <constraint firstItem="AAy-kq-Ssq" firstAttribute="leading" secondItem="wRg-os-Pct" secondAttribute="trailing" constant="1" id="sLK-n1-AkC"/>
                     <constraint firstItem="F91-R6-3yd" firstAttribute="top" secondItem="KwY-U9-dFg" secondAttribute="bottom" constant="5" id="vZ6-wq-MTY"/>
@@ -114,6 +117,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="square.and.arrow.up" catalog="system" width="32" height="32"/>
+        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
 </document>

@@ -117,6 +117,7 @@ PODS:
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - ReadMoreTextView (3.0.1)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - FBSDKCoreKit
@@ -127,6 +128,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - GoogleSignIn
   - ReadMoreTextView
+  - SVProgressHUD
 
 SPEC REPOS:
   trunk:
@@ -153,6 +155,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - ReadMoreTextView
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   AppAuth: 73574f3013a1e65b9601a3ddc8b3158cce68c09d
@@ -178,7 +181,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   ReadMoreTextView: 19147adf93abce6d7271e14031a00303fe28720d
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 2d947f27f59c0473a76f7005821961fcd3925aca
+PODFILE CHECKSUM: 674367f792fb20ff27037d6ac67dec09e0574c83
 
 COCOAPODS: 1.8.4

@@ -14,7 +14,6 @@ class Newsapi {
 
         enum Endpoints {
 
-            //static let apiKeyParam = "\(Newsapi.apiKey)"
             static let base = "https://newsapi.org/v2/"
 
             case topHeadlines
@@ -24,7 +23,7 @@ class Newsapi {
                 switch self {
                 case .topHeadlines:
                     return Endpoints.base + "top-headlines?country=us&pageSize=10&apiKey=\(Newsapi.apiKey)"
-                    
+                    //Future Work
                 case .everyThing:
                      return Endpoints.base + "everything?country=us&pageSize=10&apiKey=\(Newsapi.apiKey)"
                 }
@@ -98,7 +97,7 @@ class Newsapi {
     
     
     
-    
+    //Getting the Topheadlines
     class func getTopheadlines(completion: @escaping ([Articles], Error?) -> Void){
          taskForGETRequest(url: Endpoints.topHeadlines.url, responseType: NewsResponse.self) { (responseType, error) in
             if let responseType = responseType {
@@ -110,6 +109,7 @@ class Newsapi {
     }
     
     
+    //Future Work
     class func getEverything(completion: @escaping ([Articles], Error?) -> Void){
         
         taskForGETRequest(url: Endpoints.everyThing.url, responseType: NewsResponse.self) { (responseType, error) in

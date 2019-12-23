@@ -15,16 +15,12 @@ target 'News App' do
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
     pod 'Firebase/Storage'
-    #pod 'SVProgressHUD'
-    #pod 'ChameleonFramework'
     pod 'FBSDKCoreKit'
     pod 'FBSDKLoginKit'
     pod 'GoogleSignIn'
     pod 'ReadMoreTextView'
+    pod 'SVProgressHUD'
 
-
-    #pod 'SwiftyJSON'
-    #pod 'Alamofire'
   #end
   
 end
