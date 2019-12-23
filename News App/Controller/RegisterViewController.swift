@@ -14,7 +14,7 @@ import SVProgressHUD
 class RegisterViewController: UIViewController {
 
     
-    //Pre-linked IBOutlets
+    //IBOutlets
 
     @IBOutlet var emailTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
@@ -33,11 +33,6 @@ class RegisterViewController: UIViewController {
     @IBAction func registerPressed(_ sender: AnyObject) {
         
         SVProgressHUD.show()
-        
-
-        
-        //TODO: Set up a new user on our Firbase database
-        
         Auth.auth().createUser(withEmail: emailTextfield.text!, password: passwordTextfield.text!, completion: { (user, error) in
             
             if error != nil {
@@ -49,7 +44,6 @@ class RegisterViewController: UIViewController {
                 
                 SVProgressHUD.dismiss()
                 
-                // in closure, we have to tell the compiler where does this closure take place by using "self"
                 self.performSegue(withIdentifier: "goToNewsViewController", sender: self)
             }
         })

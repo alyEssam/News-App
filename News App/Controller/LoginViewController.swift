@@ -12,7 +12,7 @@ import SVProgressHUD
 
 class LogInViewController: UIViewController {
 
-    //Textfields pre-linked with IBOutlets
+    //IBOutlets
     @IBOutlet var emailTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
     
@@ -30,7 +30,6 @@ class LogInViewController: UIViewController {
 
         SVProgressHUD.show()
         
-        //TODO: Log in the user
         
         Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!, completion: { (user, error) in
             
